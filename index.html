@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Custom Countdown</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <video class="video-background" loop muted autoplay>
+      <source src="time.mp4" />
+    </video>
+
+    <!-- video background -->
+    <div class="video-overlay"></div>
+
+    <!-- form container -->
+    <div class="container">
+      <div class="input-container" id="input-container">
+        <h1>Create your Goal Deadline</h1>
+        <form class="form" id="countdownForm">
+          <label for="title">Enter your Goal</label>
+          <input type="text" id="title" placeholder="enter the counter value" required />
+          <label for="date-picker">Select the Date</label>
+          <input type="date" id="date-picker" required />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <!-- countdown container -->
+      <div class="countdown" id="countdown" hidden>
+        <h1 id="countdown-title"></h1>
+        <ul>
+          <li><span></span>Days</li>
+          <li><span></span>Hours</li>
+          <li><span></span>Minutes</li>
+          <li><span></span>Seconds</li>
+        </ul>
+        <button id="countdown-button">Reset Goal or Goal-Deadline</button>
+      </div>
+
+      <!-- countdown completed container -->
+      <div class="complete" id="complete" hidden>
+          <h1 class="complete-title">Countdown Completed!</h1>
+          <h1 id="complete-info"></h1>
+          <button id="complete-button">Start New Countdown for your Next Goal</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
