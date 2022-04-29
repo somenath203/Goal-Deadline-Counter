@@ -72,15 +72,8 @@ countDownForm.addEventListener('submit', (e) => {
         title: countDownTitle,
         date: countDownDate,
     };
-    
-    // saving data to localstorage
+
     localStorage.setItem('countdown', JSON.stringify(savedCountDown));
-
-    // retrieving data from localstorage
-
-
-    console.log(countDownTitle, countDownDate);
-
 
     countDownValue = new Date(countDownDate).getTime();
 
@@ -108,17 +101,16 @@ completeBtn.addEventListener('click', () => {
 
     countDownTitle = '';
     countDownDate = '';
-    localStorage.removeItem('countdown'); // resetting the local storage
+    localStorage.removeItem('countdown');
 
     clearInterval(countDownActive);
 });
 
 const restorePreviousCountDown = () => {
-    // getting the countdown from localstorage if available
-    if(localStorage.getItem('countdown')) {
+    if (localStorage.getItem('countdown')) {
 
         inputContainer.hidden = true;
-    
+
         savedCountDown = JSON.parse(localStorage.getItem('countdown'));
 
         countDownTitle = savedCountDown.title;
